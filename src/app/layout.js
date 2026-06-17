@@ -26,11 +26,23 @@ export const metadata = {
     "Parva Rastogi",
   ],
   authors: [{ name: "Parva Rastogi" }],
+  alternates: {
+    canonical: "https://parvarastogi.dev",
+  },
   openGraph: {
     title: "Parva Rastogi | AI/ML & Backend Developer",
     description:
       "Interactive 3D portfolio showcasing AI/ML engineering, backend development, and research.",
     type: "website",
+    url: "https://parvarastogi.dev",
+    images: [
+      {
+        url: "https://parvarastogi.dev/og-image.png",
+        width: 1200,
+        height: 1200,
+        alt: "Parva Rastogi | AI/ML & Backend Developer Portfolio Preview",
+      },
+    ],
   },
 };
 
@@ -41,6 +53,26 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col scanline-overlay">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Parva Rastogi",
+              url: "https://parvarastogi.dev",
+              sameAs: [
+                "https://github.com/parva1907",
+                "https://www.linkedin.com/in/parva-rastogi/",
+              ],
+              jobTitle: "AI/ML & Backend Developer",
+              alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "Chandigarh University",
+              },
+            }),
+          }}
+        />
         {children}
       </body>
     </html>
