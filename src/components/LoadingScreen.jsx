@@ -6,7 +6,7 @@ export default function LoadingScreen() {
   return (
     <div
       className="fixed inset-0 flex flex-col items-center justify-center gap-6"
-      style={{ background: "var(--background)", zIndex: 100 }}
+      style={{ background: "var(--bg-smoky)", zIndex: 100 }}
     >
       {/* Animated logo */}
       <motion.div
@@ -16,11 +16,11 @@ export default function LoadingScreen() {
         className="relative"
       >
         <div
-          className="w-16 h-16 rounded-2xl flex items-center justify-center font-bold text-xl"
+          className="w-16 h-16 rounded-2xl flex items-center justify-center font-bold text-xl text-black"
           style={{
             background:
-              "linear-gradient(135deg, var(--neon-blue), var(--neon-purple))",
-            boxShadow: "0 0 30px rgba(0,212,255,0.3)",
+              "linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover))",
+            boxShadow: "0 0 30px rgba(255, 219, 112, 0.25)",
           }}
         >
           PR
@@ -33,7 +33,7 @@ export default function LoadingScreen() {
           className="absolute -inset-3"
           style={{
             border: "2px solid transparent",
-            borderTopColor: "var(--neon-blue)",
+            borderTopColor: "var(--accent-gold)",
             borderRadius: "50%",
             opacity: 0.4,
           }}
@@ -45,7 +45,7 @@ export default function LoadingScreen() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="flex items-center gap-2 font-mono text-sm text-gray-500"
+        className="flex items-center gap-2 font-mono text-sm text-text-muted"
       >
         <span>Initializing</span>
         <motion.span

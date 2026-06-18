@@ -1,9 +1,10 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -32,7 +33,7 @@ export const metadata = {
   openGraph: {
     title: "Parva Rastogi | AI/ML & Backend Developer",
     description:
-      "Interactive 3D portfolio showcasing AI/ML engineering, backend development, and research.",
+      "Interactive portfolio showcasing AI/ML engineering, backend development, and research.",
     type: "website",
     url: "https://parvarastogi.dev",
     images: [
@@ -50,9 +51,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${poppins.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col scanline-overlay">
+      <body className="min-h-full flex flex-col bg-bg-smoky">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
